@@ -12,4 +12,4 @@
 # 注意：
 * 结束脚本，用control + z
 * screenShotDir这个目录可以更改
-* screenShotDir下面请不要放其他png文件
+* screenShotDir下面请不要放其他图片文件
