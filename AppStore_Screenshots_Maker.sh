@@ -40,19 +40,21 @@ do
 
         num=1
 
-        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG"|tr '' '?'`
+        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG"|tr " " "\?"`
         do
-            cp -f "${image}" ${screenShotDir}/5.5/${num}.png
-            sips -z 2208 1242 ${screenShotDir}/5.5/${num}.png
+            ext=${image:0-3}
 
-            cp -f "${image}" ${screenShotDir}/4.7/${num}.png
-            sips -z 1334 750 ${screenShotDir}/4.7/${num}.png
+            cp -f "${image}" ${screenShotDir}/5.5/${num}.${ext}
+            sips -z 2208 1242 ${screenShotDir}/5.5/${num}.${ext}
 
-            cp -f "${image}" ${screenShotDir}/4/${num}.png
-            sips -z 1136 640 ${screenShotDir}/4/${num}.png
+            cp -f "${image}" ${screenShotDir}/4.7/${num}.${ext}
+            sips -z 1334 750 ${screenShotDir}/4.7/${num}.${ext}
 
-            cp -f "${image}" ${screenShotDir}/3.5/${num}.png
-            sips -z 960 640 ${screenShotDir}/3.5/${num}.png
+            cp -f "${image}" ${screenShotDir}/4/${num}.${ext}
+            sips -z 1136 640 ${screenShotDir}/4/${num}.${ext}
+
+            cp -f "${image}" ${screenShotDir}/3.5/${num}.${ext}
+            sips -z 960 640 ${screenShotDir}/3.5/${num}.${ext}
 
             rm -rf "${image}"
 
