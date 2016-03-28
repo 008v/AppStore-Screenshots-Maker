@@ -26,7 +26,7 @@ screenShotDir=~/Desktop
 
 while 1>0
 do
-    count=`find ${screenShotDir} -type f -depth 1 -iname "*.PNG" -o -iname "JPG"|wc -l|sed "s/       //"`
+    count=`find ${screenShotDir} -type f -depth 1 -iname "*.PNG" -o -iname "*.JPG"|wc -l|sed "s/       //"`
 
     if [ $count == "5" ];then
         rm -rf /5.5
@@ -40,7 +40,7 @@ do
 
         num=1
 
-        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG" -o -iname "JPG"|tr " " "\?"`
+        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG" -o -iname "*.JPG"|tr " " "\?"`
         do
             ext=${image:0-3}
 
