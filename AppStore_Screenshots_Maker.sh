@@ -29,7 +29,7 @@ do
     count=`find ${screenShotDir} -type f -maxdepth 1 -iname "*.PNG" -o -iname "*.JPG"|wc -l|sed "s/       //"`
 
     if [ $count == "5" ];then
-        rm -rf /5.5
+        rm -rf ${screenShotDir}/5.5
         rm -rf ${screenShotDir}/4
         rm -rf ${screenShotDir}/3.5
         rm -rf ${screenShotDir}/4.7
