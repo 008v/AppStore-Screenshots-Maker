@@ -40,7 +40,7 @@ do
 
         num=1
 
-        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG"`
+        for image in `find ${screenShotDir} -type f -depth 1 -iname "*.PNG"|tr '' '?'`
         do
             cp -f "${image}" ${screenShotDir}/5.5/${num}.png
             sips -z 2208 1242 ${screenShotDir}/5.5/${num}.png
